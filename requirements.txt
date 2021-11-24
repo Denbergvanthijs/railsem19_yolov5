@@ -1,0 +1,6 @@
+pytorch
+opencv-python>=4.1.2
+scikit-learn
+pandas
+matplotlib
+seaborn

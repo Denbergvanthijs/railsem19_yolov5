@@ -1,0 +1,8 @@
+path: ./rs19_person # Dataset root dir
+train: images/train # Train images
+val: images/val # Val images
+test: images/test # Test images
+
+# Classes
+nc: 1 # Number of classes
+names: ["person"] # Class names
