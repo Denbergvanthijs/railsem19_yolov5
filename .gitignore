@@ -1,3 +1,11 @@
+# Custom
+rs19_val/
+rs19_person/
+appendix/
+models/
+
+wandb/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
