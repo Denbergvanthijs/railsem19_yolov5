@@ -10,6 +10,13 @@ This repository implements multiple YOLOv5 models on the RailSem19 dataset. Thes
 
 ## Baseline results
 
+The following results are achieved on the YOLOv5 models with only the `person` class:
+
+![Results mAP](./baselines/baselines_mAP.png)
+![Results time](./baselines/baselines_time.png)
+
+---
+
 The results for the baseline are collected with the following command:
 
 ```bash
