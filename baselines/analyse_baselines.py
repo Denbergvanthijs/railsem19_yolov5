@@ -1,12 +1,23 @@
 import glob
+from typing import List
 
 import matplotlib.pylab as plt
 import pandas as pd
 import seaborn as sns
 
 
-def analyse_dataset(dataset: str, n_images: int):
-    """Analyse the text files generated from running a study on a single of the three datasets."""
+def analyse_dataset(dataset: str, n_images: int,
+                    relevant_columns: List[str] = ["model", "input_size", "mAP@0.50;0.05;0.95", "average inference time"]) -> pd.DataFrame:
+    """Analyse the text files generated from running a study on a single of the three datasets. Returns dataframe with results.
+
+    :param dataset: Name of the dataset, corresponds to name of folder in ./baselines
+    :dtype dataset: str
+    :param n_images: Number of images in the dataset
+    :dtype n_images: int
+    :param relevant_columns: List of all relevant columns. Choose from:
+        precision, recall, mAP@0.50, mAP@0.50;0.05;0.95, time preprocessing, total inference time, average inference time, NMS time,
+    :dtype relevant_columns: List[str]
+    """
     files = glob.glob(f"./baselines/{dataset}/*.txt")
     column_names = ["precision", "recall", "mAP@0.50", "mAP@0.50;0.05;0.95", "time preprocessing", "total inference time", "NMS time"]
 
@@ -19,7 +30,7 @@ def analyse_dataset(dataset: str, n_images: int):
 
     df = pd.concat(data, axis=0, ignore_index=True)  # Combine the results of all models
     df["average inference time"] = df["total inference time"] / n_images  # Divide total inference time by amount of images
-    df = df[["model", "input_size", "mAP@0.50;0.05;0.95", "average inference time"]]  # Select relevant data
+    df = df[relevant_columns]  # Select relevant data
 
     return df
 
