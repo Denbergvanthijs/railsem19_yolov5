@@ -5,6 +5,7 @@ This repository implements multiple YOLOv5 models on the RailSem19 dataset. Thes
 ## Installation
 
 - The code is tested on [Python 3.9.9](https://www.python.org/downloads/) and [PyTorch 1.10](https://pytorch.org/get-started/locally/) with CUDA 11.3.
+- Install [PyTorch](https://pytorch.org/get-started/locally/) by following the instructions on their website.
 - Install [YOLOv5](https://github.com/ultralytics/yolov5) by following the instructions in the README.
 - Follow [this](https://stackoverflow.com/a/66800443) StackOverflow answer if you are experiencing the following error: `The paging file is too small for this operation to complete.`
 
