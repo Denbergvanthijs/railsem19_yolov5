@@ -41,3 +41,11 @@ The following command starts the training of your model:
 ```bash
 python ../yolov5/train.py --img-size 640 --batch-size 12 --epochs 100 --data rs19_person.yaml --weights yolov5n.pt
 ```
+
+## Inference
+
+The following command runs inference on the provided data:
+
+```bash
+python ../yolov5/detect.py --source "C:/Users/denbe/Desktop/Cabinerit kilometer 134.000 - 142.000.mp4" --weights "./models/yolov5m.pt" --classes 0
+```
