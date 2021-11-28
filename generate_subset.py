@@ -2,7 +2,7 @@ import json
 import os
 import shutil
 import warnings
-from typing import Iterable, List, Tuple
+from typing import List, Tuple
 
 from sklearn.model_selection import train_test_split
 
