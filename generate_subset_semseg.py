@@ -14,6 +14,7 @@ def get_relevant_data_semseg(fp_folder, class_number):
 
 
 def semseg2bbox(contour, classnumber: int = 11, img_width: int = 1920, img_height: int = 1080) -> Tuple[int, int, int, int, int]:
+    """Converts contour to bounding box. Returns coordinates in YOLOv5 format."""
     x_min, y_min, width, height = cv2.boundingRect(contour)
     x_center = (width / 2 + x_min) / img_width
     y_center = (height / 2 + y_min) / img_height
@@ -23,6 +24,7 @@ def semseg2bbox(contour, classnumber: int = 11, img_width: int = 1920, img_heigh
 
 def generate_all_labels_semseg(filenames_train_val_test: Tuple[List[str], List[str], List[str]], fp_in: str = "./rs19_val",
                                fp_out: str = "./rs19_person", class_number_semseg: int = 11, class_number_bbox: int = 0, min_pixel_area: int = 400) -> None:
+    """Generates all labels corresponding to the Semantic Segmentation data. Saves the labels in folders following the YOLOv5 format."""
     folders_out = (os.path.join(fp_out, "labels/train"), os.path.join(fp_out, "labels/val"), os.path.join(fp_out, "labels/test"))
 
     for dataset, folder in zip(filenames_train_val_test, folders_out):
