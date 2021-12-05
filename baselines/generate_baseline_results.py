@@ -2,10 +2,12 @@ import csv
 import sys
 
 path_to_yolov5 = "../yolov5"
-fp_output_csv = "./baselines/results.csv"
+fp_output_csv = "./baselines/results_gpu.csv"
 # fp_output_csv = "./baselines/results_cpu.csv"
+# fp_output_csv = "./baselines/results_best.csv"
 models = ("./models/yolov5n.pt", "./models/yolov5s.pt", "./models/yolov5m.pt", "./models/yolov5l.pt")
 # models = ("./models/yolov5x.pt", )
+# models = ("./models/best.pt", )
 datasets = ("train", "val", "test")
 yaml_data = "rs19_person.yaml"
 cpu = True
