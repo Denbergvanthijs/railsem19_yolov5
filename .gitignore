@@ -1,13 +1,11 @@
 # Custom
-rs19_val/
-rs19_person/
-rs19_person_semseg/
+data/rs19_val/*
+data/rs19_person/*
+data/rs19_person_semseg/*
 appendix/
 models/
 
 wandb/
-
-*.pt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

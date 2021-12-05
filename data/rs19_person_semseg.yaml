@@ -1,4 +1,4 @@
-path: ./rs19_person_semseg # Dataset root dir
+path: ./data/rs19_person_semseg # Dataset root dir
 train: images/train # Train images
 val: images/val # Val images
 test: images/test # Test images
