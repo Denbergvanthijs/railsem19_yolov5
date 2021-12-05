@@ -2,15 +2,15 @@ import csv
 import sys
 
 path_to_yolov5 = "../yolov5"
-fp_output_csv = "./baselines/results_gpu.csv"
-# fp_output_csv = "./baselines/results_cpu.csv"
-# fp_output_csv = "./baselines/results_best.csv"
-models = ("./models/yolov5n.pt", "./models/yolov5s.pt", "./models/yolov5m.pt", "./models/yolov5l.pt")
+# fp_output_csv = "./results/baselines/baselines_gpu.csv"
+# fp_output_csv = "./results/baselines/baselines_cpu.csv"
+fp_output_csv = "./results/trained/trained_best.csv"
+# models = ("./models/yolov5n.pt", "./models/yolov5s.pt", "./models/yolov5m.pt", "./models/yolov5l.pt")
 # models = ("./models/yolov5x.pt", )
-# models = ("./models/best.pt", )
+models = ("./models/yolov5s.pt", "./models/trained_best.pt")
 datasets = ("train", "val", "test")
-yaml_data = "rs19_person.yaml"
-cpu = True
+yaml_data = "./data/rs19_person.yaml"
+cpu = False
 
 if True:  # Fix to prevent auto sorting of imports
     sys.path.insert(1, path_to_yolov5)

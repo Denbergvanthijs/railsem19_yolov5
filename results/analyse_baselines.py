@@ -3,8 +3,8 @@ import pandas as pd
 import seaborn as sns
 
 if __name__ == "__main__":
-    data_gpu = pd.read_csv("./baselines/results_gpu.csv")  # Generated with `generate_baseline_results.py`
-    data_cpu = pd.read_csv("./baselines/results_cpu.csv")
+    data_gpu = pd.read_csv("./results/baselines/baselines_gpu.csv")  # Generated with `generate_results.py`
+    data_cpu = pd.read_csv("./results/baselines/baselines_cpu.csv")
     data = pd.concat((data_gpu, data_cpu), ignore_index=True)
     data["FPS"] = 1000 / data["Inference time"]
     data["Model"] = data["Model"].str[:-3]
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     plot_mAP.set_ylabels("mAP @ 0.50;0.05;0.95 (hoger is beter)", clear_inner=False)
     plot_mAP.set_xlabels("", clear_inner=False)
     plot_mAP.set(ylim=(0, 0.30))
-    plt.savefig("./baselines/baselines_mAP.png")
+    plt.savefig("./results/baselines/baselines_mAP.png")
 
     plot_time = sns.relplot(data=data, x="Model", y="FPS", col="Dataset", kind="line")
     plot_time.set_titles("Dataset: {col_name}")
@@ -28,4 +28,4 @@ if __name__ == "__main__":
     plot_time.map(plt.axhline, y=30, ls='--', c='red')
     plt.gca().text(-6.9, 30.5, "Realtime\n(30 fps)", color="red")
 
-    plt.savefig("./baselines/baselines_time.png")
+    plt.savefig("./results/baselines/baselines_time.png")
