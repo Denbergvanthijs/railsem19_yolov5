@@ -1,10 +1,12 @@
-# Custom
+# User-made folders
 data/rs19_val/*
 data/rs19_person/*
 data/rs19_person_semseg/*
 appendix/
 models/
 
+# Generated folders
+runs/
 wandb/
 
 # Byte-compiled / optimized / DLL files

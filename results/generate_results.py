@@ -30,7 +30,6 @@ for model in models:
         rows.append((model.split("/")[-1], dataset) + results[:-3] + timings)
 
 
-# Model, Dataset, Precision, Recall, mAP@0.5, mAP@0.5;0.05;0.95, Pre-process, inference, NMS per image
 with open(fp_output_csv, "w", newline="") as file:
     writer = csv.writer(file)
     writer.writerows(rows)
