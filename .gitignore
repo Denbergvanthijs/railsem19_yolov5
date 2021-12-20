@@ -4,6 +4,7 @@ data/rs19_person/*
 data/rs19_person_semseg/*
 appendix/
 models/
+yolov5/
 
 # Generated folders
 runs/
