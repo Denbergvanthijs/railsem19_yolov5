@@ -16,14 +16,14 @@ if __name__ == "__main__":
     plot_mAP.set_titles("Dataset: {col_name}")
     plot_mAP.set_ylabels("mAP @ 0.50;0.05;0.95 (hoger is beter)", clear_inner=False)
     plot_mAP.set_xlabels("", clear_inner=False)
-    plot_mAP.set(ylim=(0, 0.30))
+    plot_mAP.set(ylim=(0, None))
     plt.savefig("./results/baselines/baselines_mAP.png")
 
     plot_time = sns.relplot(data=data, x="Model", y="FPS", col="Dataset", kind="line")
     plot_time.set_titles("Dataset: {col_name}")
     plot_time.set_ylabels("Aantal beelden per seconde (hoger is beter)", clear_inner=False)
     plot_time.set_xlabels("", clear_inner=False)
-    plot_time.set(ylim=(0, 60))
+    plot_time.set(ylim=(0, None))
 
     plot_time.map(plt.axhline, y=30, ls='--', c='red')
     plt.gca().text(-6.9, 30.5, "Realtime\n(30 fps)", color="red")
