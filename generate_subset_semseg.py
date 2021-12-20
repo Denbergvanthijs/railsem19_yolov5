@@ -40,9 +40,9 @@ def generate_all_labels_semseg(filenames_train_val_test: Tuple[List[str], List[s
 
             data_txt = []  # List of all objects in a single image
             for contour in contours:
-                # if cv2.contourArea(contour) > min_pixel_area:  # TODO: Only save big enough instances
-                bbox = semseg2bbox(contour, class_number_bbox, img_width, img_height)
-                data_txt.append(" ".join(str(i) for i in bbox))  # Add instance to list of instances of this image
+                if cv2.contourArea(contour) > min_pixel_area:  # TODO: Only save big enough instances
+                    bbox = semseg2bbox(contour, class_number_bbox, img_width, img_height)
+                    data_txt.append(" ".join(str(i) for i in bbox))  # Add instance to list of instances of this image
 
             data_txt = "\n".join(data_txt)  # Combine all objects into single string
             with open(path_out, "w") as file_out:
@@ -50,8 +50,8 @@ def generate_all_labels_semseg(filenames_train_val_test: Tuple[List[str], List[s
 
 
 if __name__ == "__main__":
-    fp_railsem19_dataset = "./rs19_val"
-    fp_new_dataset = "./rs19_person_semseg"
+    fp_railsem19_dataset = "./data/rs19_val"
+    fp_new_dataset = "./data/rs19_person_semseg"
 
     generate_folders(fp_rootdir=fp_new_dataset)  # Generate empty folders
 

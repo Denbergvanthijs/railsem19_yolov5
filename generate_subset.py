@@ -155,8 +155,11 @@ def generate_all_labels(filenames_train_val_test: Tuple[List[str], List[str], Li
 
 
 if __name__ == "__main__":
-    generate_folders(fp_rootdir="./rs19_person")  # Generate empty folders
-    json_data = read_all_labels(fp_folder="./rs19_val/jsons/rs19_val")  # Load all JSON labels
+    fp_railsem19_dataset = "./data/rs19_val"
+    fp_new_dataset = "./data/rs19_person"
+
+    generate_folders(fp_rootdir=fp_new_dataset)  # Generate empty folders
+    json_data = read_all_labels(fp_folder=os.path.join(fp_railsem19_dataset, "jsons", "rs19_val"))  # Load all JSON labels
 
     # List of all filenames with the class `person`
     data_person = get_relevant_data(json_data=json_data, classname="person")
@@ -166,7 +169,8 @@ if __name__ == "__main__":
     relevant_data = set(data_person) - set(data_person_group)  # Only keep images where `person` is present and `person-group` is not
 
     filenames_train_val_test = train_val_test_split(relevant_data, seed=42)  # Split filenames in train / val / test split
-    copy_images(filenames_train_val_test, fp_in="./rs19_val", fp_out="./rs19_person")  # Copy relevant images to corresponding folders
+    copy_images(filenames_train_val_test, fp_in=fp_railsem19_dataset,
+                fp_out=fp_new_dataset)  # Copy relevant images to corresponding folders
 
-    generate_all_labels(filenames_train_val_test, fp_in="./rs19_val", fp_out="./rs19_person", relevant_classes={"person": 0})
+    generate_all_labels(filenames_train_val_test, fp_in=fp_railsem19_dataset, fp_out=fp_new_dataset, relevant_classes={"person": 0})
     print([len(l) for l in filenames_train_val_test])
