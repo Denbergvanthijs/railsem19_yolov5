@@ -5,6 +5,7 @@ data/rs19_person_semseg/*
 appendix/
 models/
 yolov5/
+*.csv
 
 # Generated folders
 runs/

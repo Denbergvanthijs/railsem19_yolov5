@@ -9,6 +9,7 @@ if __name__ == "__main__":
     data["Model"] = data["Model"].str.replace("trained_best", "Getraind model")  # Change text for legend
     data["Model"] = data["Model"].str.replace("yolov5s", "YOLOv5s baseline")
     print(data)
+    data.to_csv("./results/trained/trained_all.txt", index=False, decimal=",", sep="|")
 
     sns.set_theme(context="paper", style="whitegrid", font="serif", font_scale=1.5, rc={"lines.linewidth": 2})
 
