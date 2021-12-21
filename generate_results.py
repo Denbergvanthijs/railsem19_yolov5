@@ -8,7 +8,7 @@ fp_output_csv = "./results/trained/trained_best.csv"
 # models = ("./models/yolov5x.pt", )
 models = ("./models/yolov5s.pt", "./models/trained_best.pt")
 datasets = ("train", "val", "test")
-yaml_data = "./data/rs19_person.yaml"
+yaml_data = "./data/rs19_person_semseg.yaml"
 cpu = False
 
 # python ./yolov5/val.py --data "./yolov5/data/coco128.yaml" --weights "yolov5n.pt" --batch-size 1 --task val --workers 1
@@ -24,7 +24,8 @@ if __name__ == "__main__":
                                           batch_size=1,
                                           task=dataset,
                                           workers=1,
-                                          single_cls=True)
+                                          single_cls=True,
+                                          device="cpu" if cpu else "")
 
             rows.append((model.split("/")[-1], dataset) + results[:-3] + timings)
 
