@@ -63,7 +63,9 @@ Validation can be done in two ways
 
 ### 1. From the command line
 
-python ..\yolov5\val.py --data "./data/rs19_person.yaml" --weights "yolov5s.pt" --batch-size 1 --task val --single-cls
+```bash
+python ../yolov5/val.py --data "./data/rs19_person.yaml" --weights "yolov5s.pt" --batch-size 1 --task val --single-cls
+```
 
 ### 2. Saving validation results
 
