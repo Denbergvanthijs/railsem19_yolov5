@@ -2,6 +2,16 @@
 
 This repository implements multiple YOLOv5 models on the RailSem19 dataset. These implementations are focussed on the `person` and `person-group` classes.
 
+## Examples
+
+Credits for original footage: [5K Cabview Holland Dutch Railways](https://www.youtube.com/channel/UCNnxhT5O9e43QBctJFzpDjA)
+![Train ride Heerenveen](./data/examples/train.gif)
+
+---
+
+Credits for original footage: [Rail Public Transport](https://www.youtube.com/watch?v=otIgXdE14Ao)
+![Tram ride Utrecht Science Park](./data/examples/tram.gif)
+
 ## Installation
 
 - The code is tested on [Python 3.9.9](https://www.python.org/downloads/) and [PyTorch 1.10](https://pytorch.org/get-started/locally/) with CUDA 11.3.
@@ -69,7 +79,7 @@ See the `./train_rs19.ipynb` notebook for a more detailed example.
 The following command runs inference on the provided data:
 
 ```bash
-python ./yolov5/detect.py --source "path/to/file.mp4" --weights "./models/yolov5s.pt" --classes 0
+python ./yolov5/detect.py --source "C:\Users\denbe\Desktop\U-OV Utrecht Tramlijn 22 Cabinerit Utrecht Centraal Centrumzijde - P R Science Park Uithoflijn_Trim.mp4" --weights "./models/yolov5s.pt" --classes 0
 ```
 
 The following command was used to check whether images without the class `person` really did not contain any persons:
