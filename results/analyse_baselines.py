@@ -13,20 +13,20 @@ if __name__ == "__main__":
 
     sns.set_theme(context="paper", style="whitegrid", font="serif", font_scale=1.5, rc={"lines.linewidth": 2})
 
-    plot_mAP = sns.relplot(data=data, x="Model", y="mAP@0.50;0.05;0.95", col="Dataset", kind="line")
+    plot_mAP = sns.relplot(data=data, x="Model", y="mAP@0.50;0.05;0.95", col="Dataset", kind="line", color="#1BA2DD")
     plot_mAP.set_titles("Dataset: {col_name}")
     plot_mAP.set_ylabels("mAP @ 0.50;0.05;0.95 (hoger is beter)", clear_inner=False)
     plot_mAP.set_xlabels("", clear_inner=False)
     plot_mAP.set(ylim=(0, 0.1))
     plt.savefig("./results/baselines/baselines_mAP.png")
 
-    plot_time = sns.relplot(data=data, x="Model", y="FPS", col="Dataset", kind="line")
+    plot_time = sns.relplot(data=data, x="Model", y="FPS", col="Dataset", kind="line", color="#1BA2DD")
     plot_time.set_titles("Dataset: {col_name}")
     plot_time.set_ylabels("Aantal beelden per seconde (hoger is beter)", clear_inner=False)
     plot_time.set_xlabels("", clear_inner=False)
     plot_time.set(ylim=(0, 80))
 
-    plot_time.map(plt.axhline, y=30, ls='--', c='red')
-    plt.gca().text(-6.9, 30.5, "Realtime\n(30 fps)", color="red")
+    plot_time.map(plt.axhline, y=30, ls='--', c='#E62F2B')
+    plt.gca().text(-6.9, 30.5, "Realtime\n(30 fps)", color="#E62F2B")
 
     plt.savefig("./results/baselines/baselines_time.png")

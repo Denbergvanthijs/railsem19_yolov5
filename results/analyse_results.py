@@ -13,14 +13,16 @@ if __name__ == "__main__":
 
     sns.set_theme(context="paper", style="whitegrid", font="serif", font_scale=1.5, rc={"lines.linewidth": 2})
 
-    plot_mAP = sns.barplot(data=data, x="Dataset", y="mAP@0.50;0.05;0.95", hue="Model", hue_order=["YOLOv5s baseline", "Getraind model"])
+    plot_mAP = sns.barplot(data=data, x="Dataset", y="mAP@0.50;0.05;0.95", hue="Model",
+                           hue_order=["YOLOv5s baseline", "Getraind model"], palette=["#E62F2B", "#1BA2DD"])
     plot_mAP.set(ylabel="mAP @ 0.50;0.05;0.95 (hoger is beter)")
     plot_mAP.legend(loc="upper right")
     plt.savefig("./results/trained/trained_mAP.png")
 
     plt.clf()
 
-    plot_time = sns.barplot(data=data, x="Dataset", y="FPS", hue="Model", hue_order=["YOLOv5s baseline", "Getraind model"])
+    plot_time = sns.barplot(data=data, x="Dataset", y="FPS", hue="Model", hue_order=[
+                            "YOLOv5s baseline", "Getraind model"], palette=["#E62F2B", "#1BA2DD"])
     plot_time.set(ylabel="Aantal beelden per seconde (hoger is beter)", ylim=(0, 60))
     plot_time.legend(loc="upper right")
     plt.axhline(y=30, ls="--", c="red")
