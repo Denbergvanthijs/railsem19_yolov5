@@ -57,6 +57,12 @@ The following command runs inference on the provided data:
 python ../yolov5/detect.py --source "path/to/file.mp4" --weights "./models/yolov5s.pt" --classes 0
 ```
 
+The following command was used to check whether images without the class `person` really did not contain any persons:
+
+```bash
+python ./yolov5/detect.py --source "./data/rs19_no_human" --weights "./models/trained_best.pt" --classes 0 --iou-thres 0.6 --max-det 100 --conf-thres 0.6 --save-txt --save-conf
+```
+
 ## Validation
 
 Validation can be done in two ways

@@ -2,6 +2,7 @@
 data/rs19_val/*
 data/rs19_person/*
 data/rs19_person_semseg/*
+data/rs19_no_human/*
 appendix/
 models/
 yolov5/
