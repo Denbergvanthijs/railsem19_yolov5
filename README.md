@@ -2,16 +2,6 @@
 
 This repository implements multiple YOLOv5 models on the RailSem19 dataset. These implementations are focussed on the `person` and `person-group` classes.
 
-## Examples
-
-Credits for original footage: [5K Cabview Holland Dutch Railways](https://www.youtube.com/channel/UCNnxhT5O9e43QBctJFzpDjA)
-![Train ride Heerenveen](./data/examples/train.gif)
-
----
-
-Credits for original footage: [Rail Public Transport](https://www.youtube.com/watch?v=otIgXdE14Ao)
-![Tram ride Utrecht Science Park](./data/examples/tram.gif)
-
 ## Installation
 
 - The code is tested on [Python 3.9.9](https://www.python.org/downloads/) and [PyTorch 1.10](https://pytorch.org/get-started/locally/) with CUDA 11.3.
