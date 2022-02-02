@@ -19,7 +19,7 @@ Models can be downloaded on the release page of the [railsem19_yolov5](https://g
 [![Tram](https://img.youtube.com/vi/RgRZPr40Mfc/0.jpg)](https://www.youtube.com/watch?v=RgRZPr40Mfc)
 [![Train](https://img.youtube.com/vi/RL0G_WcGR_s/0.jpg)](https://www.youtube.com/watch?v=RL0G_WcGR_s)
 
-
+(Click on the tumbnails to watch on YouTube)
 
 ### Baselines
 
